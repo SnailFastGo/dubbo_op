@@ -31,5 +31,6 @@ public class Consumer {
                 System.out.println(list.get(i));  
             }  
         }  
+        context.close();
     }
 }
