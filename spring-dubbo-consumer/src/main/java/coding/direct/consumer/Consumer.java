@@ -5,10 +5,17 @@ import java.util.List;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ReferenceConfig;
 
-import coding.dubbo.api.APIService;
 import coding.dubbo.direct.DirectService;
 import coding.dubbo.entity.User;
 
+/**
+ * @project 基于点对点直连的dubbo服务消费者
+ * @file Consumer.java 创建时间:2017年9月4日下午4:03:01
+ * @description 描述（简要描述类的职责、实现方式、使用注意事项等）
+ * @author dzn
+ * @version 1.0
+ *
+ */
 public class Consumer {
     public static void main(String[] args) {
         // 当前应用配置
@@ -16,7 +23,7 @@ public class Consumer {
         application.setName("yyy");
         
         
-        // 此实例很重，封装了与注册中心的连接以及与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
+        // 此实例很重，封装了与与提供者的连接，请自行缓存，否则可能造成内存和连接泄漏
         ReferenceConfig<DirectService> reference = new ReferenceConfig<DirectService>(); 
         reference.setApplication(application);
         reference.setInterface(DirectService.class);
