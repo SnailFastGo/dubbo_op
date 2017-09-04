@@ -48,7 +48,7 @@
 	</dependency>
 	<dependency>
 		<groupId>com.snailfast.coding</groupId>
-		<artifactId>spirng-dubbo-interface</artifactId>
+		<artifactId>spring-dubbo-interface</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
     <dependency>

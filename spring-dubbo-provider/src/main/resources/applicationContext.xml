@@ -7,7 +7,7 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">  
   
     <!-- 具体的实现bean -->  
-    <bean id="demoService" class="coding.demo.provider.DemoServiceImpl" />  
+    <bean id="xmlService" class="coding.xml.provider.XMLServiceImpl" />  
   
     <!-- 提供方应用信息，用于计算依赖关系 -->  
     <dubbo:application name="xs_provider" />  
@@ -22,6 +22,6 @@
     <dubbo:protocol name="dubbo" port="20880" />  
   
     <!-- 声明需要暴露的服务接口 -->  
-    <dubbo:service interface="coding.dubbo.demo.DemoService"  ref="demoService" />  
+    <dubbo:service interface="coding.dubbo.xml.XMLService"  ref="xmlService" />  
   
 </beans>  

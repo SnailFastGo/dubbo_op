@@ -9,6 +9,14 @@ import com.alibaba.dubbo.config.RegistryConfig;
 import coding.dubbo.api.APIService;
 import coding.dubbo.entity.User;
 
+/**
+ * @project 基于Dubbo API实现的服务消费者
+ * @file Consumer.java 创建时间:2017年9月4日下午3:41:21
+ * @description 描述（简要描述类的职责、实现方式、使用注意事项等）
+ * @author dzn
+ * @version 1.0
+ *
+ */
 public class Consumer {
     public static void main(String[] args) {
         // 当前应用配置

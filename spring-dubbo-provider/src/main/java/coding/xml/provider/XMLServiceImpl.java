@@ -1,21 +1,21 @@
 
-package coding.api.provider;
+package coding.xml.provider;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import coding.dubbo.api.APIService;
 import coding.dubbo.entity.User;
+import coding.dubbo.xml.XMLService;
 
 /**
- * @project 基于Dubbo API实现的服务接口实现类
- * @file APIServiceImpl.java 创建时间:2017年9月4日下午3:39:57
+ * @project 基于XML配置的服务接口实现类
+ * @file XMLServiceImpl.java 创建时间:2017年9月4日下午1:00:34
  * @description 描述（简要描述类的职责、实现方式、使用注意事项等）
  * @author dzn
  * @version 1.0
  *
  */
-public class APIServiceImpl implements APIService{
+public class XMLServiceImpl implements XMLService{
 
     @Override
     public String sayHello(String name) {

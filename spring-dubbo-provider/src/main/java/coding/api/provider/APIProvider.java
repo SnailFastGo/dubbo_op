@@ -9,6 +9,14 @@ import com.alibaba.dubbo.config.ServiceConfig;
 
 import coding.dubbo.api.APIService;
 
+/**
+ * @project 基于Dubbo API实现的服务提供者
+ * @file APIProvider.java 创建时间:2017年9月4日下午3:39:01
+ * @description 描述（简要描述类的职责、实现方式、使用注意事项等）
+ * @author dzn
+ * @version 1.0
+ *
+ */
 public class APIProvider {
     public static void main(String[] args) throws IOException {
         
