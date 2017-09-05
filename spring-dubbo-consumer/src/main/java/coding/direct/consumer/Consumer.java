@@ -28,7 +28,12 @@ public class Consumer {
         reference.setApplication(application);
         reference.setInterface(DirectService.class);
         reference.setVersion("1.0.0");
-        reference.setUrl("dubbo://127.0.0.1:12345/coding.dubbo.direct.DirectService");
+        
+        //基于dubbo协议
+        reference.setUrl("dubbo://127.0.0.1:20880/coding.dubbo.direct.DirectService");
+        
+        //基于rmi协议
+        reference.setUrl("rmi://127.0.0.1:1099/coding.dubbo.direct.DirectService");
         
         // 和本地bean一样使用xxxService. 注意：此代理对象内部封装了所有通讯细节，对象较重，请缓存复用
         DirectService apiService = reference.get();

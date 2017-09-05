@@ -1,6 +1,7 @@
 package coding.direct.provider;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
@@ -33,18 +34,26 @@ public class DirectProvider {
         registry.setProtocol("zookeeper");
         registry.setAddress("172.24.8.31:2181");
         
-        // 服务提供者协议配置
-        ProtocolConfig protocol = new ProtocolConfig();
-        protocol.setName("dubbo");
-        protocol.setHost("127.0.0.1");
-        protocol.setPort(12345);
-        protocol.setThreads(200);
+        //使用dubbo协议暴露服务
+        ProtocolConfig dubboProtocol = new ProtocolConfig();
+        dubboProtocol.setName("dubbo");
+        dubboProtocol.setHost("127.0.0.1");
+        dubboProtocol.setPort(20880);
+        dubboProtocol.setThreads(200);
+        
+        //使用rmi协议暴露服务
+        ProtocolConfig rmiProtocol = new ProtocolConfig();
+        rmiProtocol.setName("rmi");
+        rmiProtocol.setHost("127.0.0.1");
+        rmiProtocol.setPort(1099);
+        rmiProtocol.setThreads(200);
         
         // 服务提供者暴露服务配置, 此实例很重，封装了与注册中心的连接，请自行缓存，否则可能造成内存和连接泄漏
         ServiceConfig<DirectService> serviceConfig = new ServiceConfig<DirectService>();
         serviceConfig.setApplication(application);
         serviceConfig.setRegistry(registry); // 多个注册中心可以用setRegistries()
-        serviceConfig.setProtocol(protocol); // 多个协议可以用setProtocols()
+//        serviceConfig.setProtocol(protocol); // 多个协议可以用setProtocols()
+        serviceConfig.setProtocols(Arrays.asList(new ProtocolConfig[]{dubboProtocol, rmiProtocol}));
         serviceConfig.setInterface(DirectService.class);
         serviceConfig.setRef(service);
         serviceConfig.setVersion("1.0.0");
