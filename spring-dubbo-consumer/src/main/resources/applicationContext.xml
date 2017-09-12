@@ -15,6 +15,9 @@
     <dubbo:registry protocol = "zookeeper" address="172.24.8.35:2181, 172.24.8.33:2181, 172.24.8.31:2181" />  
   
     <!-- 生成远程服务代理，可以像使用本地bean一样使用xmlService -->  
-    <dubbo:reference id="xmlService"  interface="coding.dubbo.xml.XMLService" version="1.0.0" protocol = "dubbo"/>  
+    <dubbo:reference id="xmlService"  interface="coding.dubbo.xml.XMLService" version="1.0.0" protocol = "rmi"/>  
+    
+    <!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
+	<dubbo:annotation package="coding.annotation.consumer" />
   
 </beans>  

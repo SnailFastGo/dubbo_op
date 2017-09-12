@@ -27,4 +27,6 @@
     <!-- 声明需要暴露的服务接口 -->  
     <dubbo:service interface="coding.dubbo.xml.XMLService" version="1.0.0" ref="xmlService" protocol="dubbo, rmi" />  
   
+  	<!-- 扫描注解包路径，多个包用逗号分隔，不填pacakge表示扫描当前ApplicationContext中所有的类 -->
+  	<dubbo:annotation package="coding.annotation.provider" />
 </beans>  
